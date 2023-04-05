@@ -1,0 +1,40 @@
+@mixin header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: $color-header;
+}
+
+@mixin h1{
+    text-align: center;
+        font-size: 40px;
+        color: transparent;
+        text-shadow: 2px 2px 3px $color-main;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+            background-clip: text;
+}
+
+@mixin container_box($mw, $mar, $martop, $dp, $jc){
+    max-width: $mw;
+    margin: $mar;
+    margin-top: $martop;
+    display: $dp;
+    justify-content: $jc;
+}
+
+.container_box{
+    @include container_box(1100px, auto, 40px, flex, center)
+}
+
+@mixin p($fs, $cl, $mb){
+    font-size: $fs;
+    color: $cl;
+    margin-bottom: $mb;
+}
+
+p{
+    @include p(18px,$color-navlia ,25px)
+}
